@@ -24,31 +24,6 @@ The project models a spreadsheet grid with cell-based data, formula support, dep
 - Undo/redo support for text and color edits
 - XML-based save/load of spreadsheet state
 
-## Project Structure
-
-```text
-Class Projects/
-├── BlankSolution.sln
-├── SpreadSheetEngine/
-│   ├── Cell.cs
-│   ├── SpreadSheet.cs
-│   ├── ExpressionTree.cs
-│   ├── ShuntingYard.cs
-│   ├── OperatorNode.cs
-│   ├── VariableNode.cs
-│   ├── ConstantNode.cs
-│   ├── UndoRedoCellText.cs
-│   ├── UndoRedoCellColor.cs
-│   └── ...
-├── Spreadsheet_Flavio_Alvarez/
-│   ├── Form1.cs
-│   ├── Form1.Designer.cs
-│   ├── Program.cs
-│   └── Spreadsheet_Flavio_Alvarez.csproj
-├── SpreadsheetTests/
-└── ...
-```
-
 ## Spreadsheet Engine
 
 The core logic lives in `Class Projects/SpreadSheetEngine`. It provides the spreadsheet model and formula evaluation infrastructure.
@@ -70,17 +45,6 @@ The interactive spreadsheet front end is in `Class Projects/Spreadsheet_Flavio_A
 - applying cell colors
 - loading and saving spreadsheet files
 - using undo/redo commands from the menu
-
-## How It Works
-
-Users type values or formulas into cells. If a cell contains a formula beginning with `=`, the engine evaluates it using the referenced cells. When a referenced cell updates, dependent cells are refreshed automatically.
-
-Examples:
-- `=B2` copies the value of cell B2
-- `=A1 + A2` calculates the sum of two cells
-- `=A3 * 5` multiplies a cell value by 5
-
-If a formula references a cell that is missing, invalid, or creates a circular dependency, the spreadsheet displays an error message instead of evaluating incorrectly.
 
 ## Getting Started
 
@@ -105,6 +69,3 @@ This project is part of an academic object-oriented programming course, and it i
 - expression parsing
 - dependency management
 
-## Author
-
-Flavio Raul Alvarez Penate
